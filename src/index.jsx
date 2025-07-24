@@ -6,11 +6,14 @@ import Profile from "./pages/Profile/";
 import Settings from "./pages/Settings/";
 import Community from "./pages/Community/";
 import Error from "./pages/Error";
+import Header from "./components/Header/";
+import "./styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
       <div className="app">
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
