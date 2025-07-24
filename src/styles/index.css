@@ -1,4 +1,5 @@
 /* *********** Import ********** */
+@import "./pages.css";
 @import "./header.css";
 @import "./sidebar.css";
 @import "./sidebarButton.css";
@@ -26,4 +27,8 @@ ul {
 
 main {
   display: flex;
+}
+
+.commingSoon {
+  font-size: 50px;
 }

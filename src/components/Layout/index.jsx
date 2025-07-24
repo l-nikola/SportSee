@@ -7,7 +7,7 @@ function Layout({ children }) {
       <Header />
       <main>
         <Sidebar />
-        <section>{children}</section>
+        {children}
       </main>
     </>
   );

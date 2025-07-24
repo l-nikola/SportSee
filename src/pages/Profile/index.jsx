@@ -1,8 +1,8 @@
 function Profile() {
   return (
-    <main>
+    <section>
       <h2>Profile</h2>
-    </main>
+    </section>
   );
 }
 

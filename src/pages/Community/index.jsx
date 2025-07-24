@@ -1,8 +1,10 @@
+import CommingSoon from "../../components/CommingSoon";
+
 function Community() {
   return (
-    <main>
-      <h2>Community</h2>
-    </main>
+    <section className="community">
+      <CommingSoon />
+    </section>
   );
 }
 

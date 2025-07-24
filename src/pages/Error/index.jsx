@@ -1,8 +1,8 @@
 function Error() {
   return (
-    <main>
+    <section>
       <h2>Error</h2>
-    </main>
+    </section>
   );
 }
 
