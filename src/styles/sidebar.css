@@ -4,6 +4,14 @@
   background-color: var(--black);
 }
 
+.sidebar div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 256px;
+}
+
 .sidebar span {
   color: white;
   position: absolute;

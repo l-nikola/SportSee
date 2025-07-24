@@ -1,0 +1,12 @@
+.sidebarButton {
+  width: 64px;
+  height: 64px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.sidebarButton img {
+  width: 32px;
+  height: 32px;
+}
