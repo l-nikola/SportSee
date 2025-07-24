@@ -1,10 +1,11 @@
 /* *********** Import ********** */
 @import "./header.css";
+@import "./sidebar.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 /* *********** Variables ********** */
 :root {
-  --dark: #020203;
+  --black: #020203;
 }
 
 /* *********** Global Styles ********** */
@@ -20,4 +21,8 @@ a {
 
 ul {
   list-style: none;
+}
+
+main {
+  display: flex;
 }

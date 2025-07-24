@@ -1,0 +1,13 @@
+.sidebar {
+  width: 117px;
+  height: 933px;
+  background-color: var(--black);
+}
+
+.sidebar span {
+  color: white;
+  position: absolute;
+  transform: rotate(-90deg);
+  left: -33px;
+  bottom: 139px;
+}
