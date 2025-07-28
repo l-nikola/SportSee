@@ -1,11 +1,9 @@
 import CommingSoon from "../../components/CommingSoon";
 
-function Community() {
+export default function Community() {
   return (
     <section className="community">
       <CommingSoon />
     </section>
   );
 }
-
-export default Community;

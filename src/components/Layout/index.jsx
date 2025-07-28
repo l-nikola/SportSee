@@ -1,7 +1,7 @@
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 
-function Layout({ children }) {
+export default function Layout({ children }) {
   return (
     <>
       <Header />
@@ -12,5 +12,3 @@ function Layout({ children }) {
     </>
   );
 }
-
-export default Layout;

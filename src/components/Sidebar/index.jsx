@@ -1,6 +1,6 @@
 import SidebarButton from "../SidebarButton";
 
-function Sidebar() {
+export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div>
@@ -13,5 +13,3 @@ function Sidebar() {
     </aside>
   );
 }
-
-export default Sidebar;
