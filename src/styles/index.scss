@@ -7,10 +7,14 @@
 @import "./components/header.scss";
 @import "./components/sidebar.scss";
 @import "./components/sidebarButton.scss";
+@import "./components/dialyChart.scss";
 
 /* *********** Variables ********** */
 :root {
   --black: #020203;
+  --red: #e60000;
+  --lightGrey: #fbfbfb;
+  --fontGrey: #74798c;
 }
 
 /* *********** Global Styles ********** */
