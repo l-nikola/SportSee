@@ -1,0 +1,21 @@
+.sidebar {
+  width: 117px;
+  height: 933px;
+  background-color: var(--black);
+
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 256px;
+  }
+
+  span {
+    color: white;
+    position: absolute;
+    transform: rotate(-90deg);
+    left: -33px;
+    bottom: 139px;
+  }
+}

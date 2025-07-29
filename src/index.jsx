@@ -7,7 +7,7 @@ import Settings from "./pages/Settings/";
 import Community from "./pages/Community/";
 import Error from "./pages/Error";
 import Layout from "./components/Layout";
-import "./styles/index.css";
+import "./styles/index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
