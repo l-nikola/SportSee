@@ -13,9 +13,9 @@ const apiClient = axios.create({
 });
 
 // Find user
-function findByUserId(dataArray, userId) {
+function findByUserId(dataArray, userId, key = "id") {
   const numericUserId = Number(userId);
-  return dataArray.find((item) => item.id === numericUserId);
+  return dataArray.find((item) => item[key] === numericUserId);
 }
 
 // Get User
@@ -26,6 +26,18 @@ export async function getUser(userId) {
     return new Promise((resolve) => setTimeout(() => resolve(data), 300));
   } else {
     const response = await apiClient.get(`/user/${userId}`);
+    return response.data.data;
+  }
+}
+
+// Get Activity
+export async function getUserActivity(userId) {
+  if (useMock) {
+    const data = findByUserId(USER_ACTIVITY, userId, "userId");
+    if (!data) throw new Error("User activity not found");
+    return new Promise((resolve) => setTimeout(() => resolve(data), 300));
+  } else {
+    const response = await apiClient.get(`/user/${userId}/activity`);
     return response.data.data;
   }
 }
