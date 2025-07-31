@@ -1,21 +1,28 @@
 import { useParams } from "react-router-dom";
-import { getUser, getUserActivity } from "../../services/api";
+import {
+  getUser,
+  getUserActivity,
+  getUserPerformance,
+} from "../../services/api";
 import { useEffect, useState } from "react";
 import UserProfile from "../../components/UserProfile";
 import DailyChart from "../../components/DailyChart";
+import PerformanceChart from "../../components/PerformanceChart";
 
 export default function Profile() {
   const { id } = useParams();
 
   const [user, setUser] = useState();
   const [activity, setActivity] = useState();
+  const [performance, setPerformance] = useState();
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const [userData, activityData] = await Promise.all([
+        const [userData, activityData, performanceData] = await Promise.all([
           getUser(id),
           getUserActivity(id),
+          getUserPerformance(id),
         ]);
         setUser(userData);
 
@@ -26,6 +33,8 @@ export default function Profile() {
         }));
 
         setActivity(transformed);
+
+        setPerformance(performanceData);
       } catch (error) {
         console.error(error);
       }
@@ -41,10 +50,15 @@ export default function Profile() {
       ) : (
         <p>Chargement des données utilisateur...</p>
       )}
-      {activity ? (
+      {/* {activity ? (
         <DailyChart data={activity} />
       ) : (
         <p>Chargement des données d'activité...</p>
+      )} */}
+      {performance ? (
+        <PerformanceChart data={performance} />
+      ) : (
+        <p>Chargement des performances...</p>
       )}
     </section>
   );

@@ -41,3 +41,15 @@ export async function getUserActivity(userId) {
     return response.data.data;
   }
 }
+
+// Get Performance
+export async function getUserPerformance(userId) {
+  if (useMock) {
+    const data = findByUserId(USER_PERFORMANCE, userId, "userId");
+    if (!data) throw new Error("User performance not found");
+    return new Promise((resolve) => setTimeout(() => resolve(data), 300));
+  } else {
+    const response = await apiClient.get(`/user/${userId}/performance`);
+    return response.data.data;
+  }
+}

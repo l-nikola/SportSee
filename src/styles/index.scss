@@ -5,6 +5,7 @@
 @use "./components/sidebar.scss";
 @use "./components/sidebarButton.scss";
 @use "./components/dailyChart.scss";
+@use "./components/performanceChart.scss";
 
 /* *********** Import general ********** */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
@@ -15,6 +16,7 @@
   --red: #e60000;
   --lightGrey: #fbfbfb;
   --fontGrey: #74798c;
+  --backgroundGrey: #282d30;
 }
 
 /* *********** Global Styles ********** */
