@@ -1,13 +1,13 @@
+/* *********** Import pages and components ********** */
+@use "./pages/community.scss";
+@use "./pages/settings.scss";
+@use "./components/header.scss";
+@use "./components/sidebar.scss";
+@use "./components/sidebarButton.scss";
+@use "./components/dailyChart.scss";
+
 /* *********** Import general ********** */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
-
-/* *********** Import pages and components ********** */
-@import "./pages/community.scss";
-@import "./pages/settings.scss";
-@import "./components/header.scss";
-@import "./components/sidebar.scss";
-@import "./components/sidebarButton.scss";
-@import "./components/dailyChart.scss";
 
 /* *********** Variables ********** */
 :root {
