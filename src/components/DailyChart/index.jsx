@@ -1,18 +1,12 @@
-import React, { PureComponent } from "react";
 import {
   BarChart,
   Bar,
-  Rectangle,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
-
-// Custom component pour :
-// - Le tooltip : CustomChartTooltip
 
 const CustomChartLegend = () => {
   return (
@@ -27,6 +21,19 @@ const CustomChartLegend = () => {
       </div>
     </div>
   );
+};
+
+const CustomChartTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="dailyChart__header__tooltip">
+        <p>{`${payload[0].value} kg`}</p>
+        <p>{`${payload[1].value} kCal`}</p>
+      </div>
+    );
+  }
+
+  return null;
 };
 
 function DailyChart({ data }) {
@@ -65,7 +72,7 @@ function DailyChart({ data }) {
               domain={["dataMin-2", "dataMax+1"]}
             />
             <YAxis hide yAxisId="calories" />
-            <Tooltip />
+            <Tooltip content={<CustomChartTooltip />} />
             <Bar
               dataKey="kilogram"
               yAxisId="kilogram"
