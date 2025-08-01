@@ -2,7 +2,9 @@
   width: 835px;
   height: 320px;
   padding: 24px 26px 24px 32px;
+  box-sizing: border-box;
   background-color: var(--lightGrey);
+  margin-top: 77px;
 
   h2 {
     font-weight: 500;

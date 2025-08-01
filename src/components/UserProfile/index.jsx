@@ -1,7 +1,11 @@
 export default function UserProfile({ user }) {
   return (
-    <div>
-      <h1>Bonjour {user.userInfos.firstName}</h1>
-    </div>
+    <section className="userProfile">
+      <h1>
+        Bonjour{" "}
+        <span className="userProfile__name">{user.userInfos.firstName}</span>
+      </h1>
+      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+    </section>
   );
 }

@@ -52,34 +52,35 @@ export default function Profile() {
   }, [id]);
 
   return (
-    <section>
-      <h2>Profile</h2>
+    <section className="profile">
       {user ? (
         <UserProfile user={user} />
       ) : (
         <p>Chargement des données utilisateur...</p>
       )}
-      {/* {activity ? (
+      {activity ? (
         <DailyChart data={activity} />
       ) : (
         <p>Chargement des données d'activité...</p>
       )}
-      {performance ? (
-        <PerformanceChart data={performance} />
-      ) : (
-        <p>Chargement des performances...</p>
-      )}
-      {averageSession ? (
-        <AverageSessionChart data={averageSession} />
-      ) : (
-        <p>Chargement des durées...</p>
-      )}
-      {user ? (
-        <ScoreChart score={user.todayScore ?? user.score} />
-      ) : (
-        <p>Chargement du score...</p>
-      )} */}
-      {user ? (
+      <div className="profile__smallChart">
+        {averageSession ? (
+          <AverageSessionChart data={averageSession} />
+        ) : (
+          <p>Chargement des durées...</p>
+        )}
+        {performance ? (
+          <PerformanceChart data={performance} />
+        ) : (
+          <p>Chargement des performances...</p>
+        )}
+        {user ? (
+          <ScoreChart score={user.todayScore ?? user.score} />
+        ) : (
+          <p>Chargement du score...</p>
+        )}
+      </div>
+      {/* {user ? (
         <>
           <Card
             keyData={user.keyData.calorieCount}
@@ -108,7 +109,7 @@ export default function Profile() {
         </>
       ) : (
         <p>Chargement des données...</p>
-      )}
+      )} */}
     </section>
   );
 }

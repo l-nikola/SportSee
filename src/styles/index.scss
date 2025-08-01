@@ -1,6 +1,7 @@
 /* *********** Import pages and components ********** */
 @use "./pages/community.scss";
 @use "./pages/settings.scss";
+@use "./pages/profile.scss";
 @use "./components/header.scss";
 @use "./components/sidebar.scss";
 @use "./components/sidebarButton.scss";
@@ -9,6 +10,7 @@
 @use "./components/averageSessionChart.scss";
 @use "./components/scoreChart.scss";
 @use "./components/card.scss";
+@use "./components/userProfile.scss";
 
 /* *********** Import general ********** */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
