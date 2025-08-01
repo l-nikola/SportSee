@@ -1,9 +1,19 @@
 .profile {
   margin: 68px 0 0 107px;
+  display: flex;
+  flex-direction: row;
 
   &__smallChart {
     display: flex;
+    flex-direction: row;
     gap: 30px;
     margin-top: 28px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+    margin: auto 0 55px 32px;
   }
 }

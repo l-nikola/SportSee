@@ -53,63 +53,67 @@ export default function Profile() {
 
   return (
     <section className="profile">
-      {user ? (
-        <UserProfile user={user} />
-      ) : (
-        <p>Chargement des données utilisateur...</p>
-      )}
-      {activity ? (
-        <DailyChart data={activity} />
-      ) : (
-        <p>Chargement des données d'activité...</p>
-      )}
-      <div className="profile__smallChart">
-        {averageSession ? (
-          <AverageSessionChart data={averageSession} />
-        ) : (
-          <p>Chargement des durées...</p>
-        )}
-        {performance ? (
-          <PerformanceChart data={performance} />
-        ) : (
-          <p>Chargement des performances...</p>
-        )}
+      <div>
         {user ? (
-          <ScoreChart score={user.todayScore ?? user.score} />
+          <UserProfile user={user} />
         ) : (
-          <p>Chargement du score...</p>
+          <p>Chargement des données utilisateur...</p>
+        )}
+        {activity ? (
+          <DailyChart data={activity} />
+        ) : (
+          <p>Chargement des données d'activité...</p>
+        )}
+        <div className="profile__smallChart">
+          {averageSession ? (
+            <AverageSessionChart data={averageSession} />
+          ) : (
+            <p>Chargement des durées...</p>
+          )}
+          {performance ? (
+            <PerformanceChart data={performance} />
+          ) : (
+            <p>Chargement des performances...</p>
+          )}
+          {user ? (
+            <ScoreChart score={user.todayScore ?? user.score} />
+          ) : (
+            <p>Chargement du score...</p>
+          )}
+        </div>
+      </div>
+      <div className="profile__card">
+        {user ? (
+          <>
+            <Card
+              keyData={user.keyData.calorieCount}
+              unit={"kCal"}
+              name={"Calories"}
+              icon={"../public/icons/energy.svg"}
+            />
+            <Card
+              keyData={user.keyData.proteinCount}
+              unit={"g"}
+              name={"Proteines"}
+              icon={"../public/icons/chicken.svg"}
+            />
+            <Card
+              keyData={user.keyData.carbohydrateCount}
+              unit={"g"}
+              name={"Glucides"}
+              icon={"../public/icons/apple.svg"}
+            />
+            <Card
+              keyData={user.keyData.lipidCount}
+              unit={"g"}
+              name={"Lipides"}
+              icon={"../public/icons/burger.svg"}
+            />
+          </>
+        ) : (
+          <p>Chargement des données...</p>
         )}
       </div>
-      {/* {user ? (
-        <>
-          <Card
-            keyData={user.keyData.calorieCount}
-            unit={"kCal"}
-            name={"Calories"}
-            icon={"../public/icons/energy.svg"}
-          />
-          <Card
-            keyData={user.keyData.proteinCount}
-            unit={"g"}
-            name={"Proteines"}
-            icon={"../public/icons/chicken.svg"}
-          />
-          <Card
-            keyData={user.keyData.carbohydrateCount}
-            unit={"g"}
-            name={"Glucides"}
-            icon={"../public/icons/apple.svg"}
-          />
-          <Card
-            keyData={user.keyData.lipidCount}
-            unit={"g"}
-            name={"Lipides"}
-            icon={"../public/icons/burger.svg"}
-          />
-        </>
-      ) : (
-        <p>Chargement des données...</p>
-      )} */}
     </section>
   );
 }
