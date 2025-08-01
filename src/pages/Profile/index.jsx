@@ -10,6 +10,7 @@ import UserProfile from "../../components/UserProfile";
 import DailyChart from "../../components/DailyChart";
 import PerformanceChart from "../../components/PerformanceChart";
 import AverageSessionChart from "../../components/AverageSessionChart";
+import ScoreChart from "../../components/ScoreChart";
 
 export default function Profile() {
   const { id } = useParams();
@@ -67,11 +68,15 @@ export default function Profile() {
       ) : (
         <p>Chargement des performances...</p>
       )} */}
-
-      {averageSession ? (
+      {/* {averageSession ? (
         <AverageSessionChart data={averageSession} />
       ) : (
         <p>Chargement des durées...</p>
+      )} */}
+      {user ? (
+        <ScoreChart score={user.todayScore ?? user.score} />
+      ) : (
+        <p>Chargement du score...</p>
       )}
     </section>
   );
