@@ -53,3 +53,15 @@ export async function getUserPerformance(userId) {
     return response.data.data;
   }
 }
+
+// Get Average Sessions
+export async function getUserAverageSessions(userId) {
+  if (useMock) {
+    const data = findByUserId(USER_AVERAGE_SESSIONS, userId, "userId");
+    if (!data) throw new Error("User average sessions not found");
+    return new Promise((resolve) => setTimeout(() => resolve(data), 300));
+  } else {
+    const response = await apiClient.get(`/user/${userId}/average-sessions`);
+    return response.data.data;
+  }
+}

@@ -3,11 +3,13 @@ import {
   getUser,
   getUserActivity,
   getUserPerformance,
+  getUserAverageSessions,
 } from "../../services/api";
 import { useEffect, useState } from "react";
 import UserProfile from "../../components/UserProfile";
 import DailyChart from "../../components/DailyChart";
 import PerformanceChart from "../../components/PerformanceChart";
+import AverageSessionChart from "../../components/AverageSessionChart";
 
 export default function Profile() {
   const { id } = useParams();
@@ -15,15 +17,18 @@ export default function Profile() {
   const [user, setUser] = useState();
   const [activity, setActivity] = useState();
   const [performance, setPerformance] = useState();
+  const [averageSession, setAverageSession] = useState();
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const [userData, activityData, performanceData] = await Promise.all([
-          getUser(id),
-          getUserActivity(id),
-          getUserPerformance(id),
-        ]);
+        const [userData, activityData, performanceData, averageSession] =
+          await Promise.all([
+            getUser(id),
+            getUserActivity(id),
+            getUserPerformance(id),
+            getUserAverageSessions(id),
+          ]);
         setUser(userData);
 
         const transformed = activityData.sessions.map((session, index) => ({
@@ -35,6 +40,8 @@ export default function Profile() {
         setActivity(transformed);
 
         setPerformance(performanceData);
+
+        setAverageSession(averageSession.sessions);
       } catch (error) {
         console.error(error);
       }
@@ -55,10 +62,16 @@ export default function Profile() {
       ) : (
         <p>Chargement des données d'activité...</p>
       )} */}
-      {performance ? (
+      {/* {performance ? (
         <PerformanceChart data={performance} />
       ) : (
         <p>Chargement des performances...</p>
+      )} */}
+
+      {averageSession ? (
+        <AverageSessionChart data={averageSession} />
+      ) : (
+        <p>Chargement des durées...</p>
       )}
     </section>
   );

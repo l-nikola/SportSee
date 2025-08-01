@@ -6,6 +6,7 @@
 @use "./components/sidebarButton.scss";
 @use "./components/dailyChart.scss";
 @use "./components/performanceChart.scss";
+@use "./components/averageSessionChart.scss";
 
 /* *********** Import general ********** */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
@@ -14,6 +15,7 @@
 :root {
   --black: #020203;
   --red: #e60000;
+  --lightRed: #ff0000;
   --lightGrey: #fbfbfb;
   --fontGrey: #74798c;
   --backgroundGrey: #282d30;
