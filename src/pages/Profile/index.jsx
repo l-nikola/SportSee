@@ -11,6 +11,7 @@ import DailyChart from "../../components/DailyChart";
 import PerformanceChart from "../../components/PerformanceChart";
 import AverageSessionChart from "../../components/AverageSessionChart";
 import ScoreChart from "../../components/ScoreChart";
+import Card from "../../components/Card";
 
 export default function Profile() {
   const { id } = useParams();
@@ -62,21 +63,51 @@ export default function Profile() {
         <DailyChart data={activity} />
       ) : (
         <p>Chargement des données d'activité...</p>
-      )} */}
-      {/* {performance ? (
+      )}
+      {performance ? (
         <PerformanceChart data={performance} />
       ) : (
         <p>Chargement des performances...</p>
-      )} */}
-      {/* {averageSession ? (
+      )}
+      {averageSession ? (
         <AverageSessionChart data={averageSession} />
       ) : (
         <p>Chargement des durées...</p>
-      )} */}
+      )}
       {user ? (
         <ScoreChart score={user.todayScore ?? user.score} />
       ) : (
         <p>Chargement du score...</p>
+      )} */}
+      {user ? (
+        <>
+          <Card
+            keyData={user.keyData.calorieCount}
+            unit={"kCal"}
+            name={"Calories"}
+            icon={"../public/icons/energy.svg"}
+          />
+          <Card
+            keyData={user.keyData.proteinCount}
+            unit={"g"}
+            name={"Proteines"}
+            icon={"../public/icons/chicken.svg"}
+          />
+          <Card
+            keyData={user.keyData.carbohydrateCount}
+            unit={"g"}
+            name={"Glucides"}
+            icon={"../public/icons/apple.svg"}
+          />
+          <Card
+            keyData={user.keyData.lipidCount}
+            unit={"g"}
+            name={"Lipides"}
+            icon={"../public/icons/burger.svg"}
+          />
+        </>
+      ) : (
+        <p>Chargement des données...</p>
       )}
     </section>
   );

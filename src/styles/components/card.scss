@@ -1,0 +1,54 @@
+.card {
+  width: 258px;
+  height: 124px;
+  border-radius: 5px;
+  background-color: var(--lightGrey);
+  display: flex;
+
+  figure {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 32px;
+    margin-right: 24px;
+
+    &--calories {
+      background-color: #fbeaea;
+    }
+
+    &--proteines {
+      background-color: #4ab8ff1a;
+    }
+
+    &--glucides {
+      background-color: #fbf6e5;
+    }
+
+    &--lipides {
+      background-color: #fbeaef;
+    }
+  }
+
+  &__caption {
+    &--keyData {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &--name {
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--fontGrey);
+    }
+  }
+}
