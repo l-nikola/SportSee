@@ -51,68 +51,46 @@ export default function Profile() {
     fetchData();
   }, [id]);
 
+  if (!user || !activity || !performance || !averageSession) {
+    return <p>Chargement des données...</p>;
+  }
+
   return (
     <section className="profile">
       <div>
-        {user ? (
-          <UserProfile user={user} />
-        ) : (
-          <p>Chargement des données utilisateur...</p>
-        )}
-        {activity ? (
-          <DailyChart data={activity} />
-        ) : (
-          <p>Chargement des données d'activité...</p>
-        )}
+        <UserProfile user={user} />
+        <DailyChart data={activity} />
         <div className="profile__smallChart">
-          {averageSession ? (
-            <AverageSessionChart data={averageSession} />
-          ) : (
-            <p>Chargement des durées...</p>
-          )}
-          {performance ? (
-            <PerformanceChart data={performance} />
-          ) : (
-            <p>Chargement des performances...</p>
-          )}
-          {user ? (
-            <ScoreChart score={user.todayScore ?? user.score} />
-          ) : (
-            <p>Chargement du score...</p>
-          )}
+          <AverageSessionChart data={averageSession} />
+          <PerformanceChart data={performance} />
+          <ScoreChart score={user.todayScore ?? user.score} />
         </div>
       </div>
       <div className="profile__card">
-        {user ? (
-          <>
-            <Card
-              keyData={user.keyData.calorieCount}
-              unit={"kCal"}
-              name={"Calories"}
-              icon={"../public/icons/energy.svg"}
-            />
-            <Card
-              keyData={user.keyData.proteinCount}
-              unit={"g"}
-              name={"Proteines"}
-              icon={"../public/icons/chicken.svg"}
-            />
-            <Card
-              keyData={user.keyData.carbohydrateCount}
-              unit={"g"}
-              name={"Glucides"}
-              icon={"../public/icons/apple.svg"}
-            />
-            <Card
-              keyData={user.keyData.lipidCount}
-              unit={"g"}
-              name={"Lipides"}
-              icon={"../public/icons/burger.svg"}
-            />
-          </>
-        ) : (
-          <p>Chargement des données...</p>
-        )}
+        <Card
+          keyData={user.keyData.calorieCount}
+          unit={"kCal"}
+          name={"Calories"}
+          icon={"../public/icons/energy.svg"}
+        />
+        <Card
+          keyData={user.keyData.proteinCount}
+          unit={"g"}
+          name={"Proteines"}
+          icon={"../public/icons/chicken.svg"}
+        />
+        <Card
+          keyData={user.keyData.carbohydrateCount}
+          unit={"g"}
+          name={"Glucides"}
+          icon={"../public/icons/apple.svg"}
+        />
+        <Card
+          keyData={user.keyData.lipidCount}
+          unit={"g"}
+          name={"Lipides"}
+          icon={"../public/icons/burger.svg"}
+        />
       </div>
     </section>
   );
