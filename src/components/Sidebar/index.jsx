@@ -4,10 +4,10 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div>
-        <SidebarButton icon={"public/icons/meditation.svg"} />
-        <SidebarButton icon={"public/icons/swimming.svg"} />
-        <SidebarButton icon={"public/icons/bike.svg"} />
-        <SidebarButton icon={"public/icons/dumbbell.svg"} />
+        <SidebarButton icon={"/icons/meditation.svg"} />
+        <SidebarButton icon={"/icons/swimming.svg"} />
+        <SidebarButton icon={"/icons/bike.svg"} />
+        <SidebarButton icon={"/icons/dumbbell.svg"} />
       </div>
       <span>Copiryght, SportSee 2020</span>
     </aside>
