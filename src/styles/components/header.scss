@@ -25,3 +25,25 @@ header {
     }
   }
 }
+
+/* *********** Responsive ********** */
+@media (max-width: 1339px) {
+  header nav {
+    height: 81px;
+
+    img {
+      width: 167px;
+      height: 50px;
+      margin: 0 129px 0 28px;
+    }
+
+    ul {
+      gap: 100px;
+
+      li a {
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+  }
+}
