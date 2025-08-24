@@ -2,6 +2,9 @@
   width: 117px;
   height: 933px;
   background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   div {
     display: flex;
@@ -13,9 +16,11 @@
 
   span {
     color: white;
-    position: absolute;
     transform: rotate(-90deg);
-    left: -33px;
-    bottom: 139px;
+    white-space: nowrap;
+    margin-top: auto;
+    margin-bottom: 140px;
+    font-weight: 500;
+    font-size: 12px;
   }
 }
