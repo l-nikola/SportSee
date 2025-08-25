@@ -46,4 +46,17 @@ main {
 
 .commingSoon {
   font-size: 50px;
+  text-decoration: underline;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 50px;
+
+  h2 span {
+    color: var(--red);
+  }
 }
