@@ -2,8 +2,10 @@ import UserButton from "../../components/UserButton";
 
 export default function Home() {
   return (
-    <section>
-      <h2>Home</h2>
+    <section className="home">
+      <h2>
+        Bienvenue sur <span>SportSee</span>
+      </h2>
       <UserButton />
     </section>
   );

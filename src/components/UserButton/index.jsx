@@ -8,9 +8,13 @@ export default function UserSwitch() {
   };
 
   return (
-    <div>
-      <button onClick={() => handleSwitchUser(12)}>Utilisateur Karl</button>
-      <button onClick={() => handleSwitchUser(18)}>Utilisateur Cecilia</button>
+    <div className="userButton">
+      <button onClick={() => handleSwitchUser(12)}>
+        Utilisateur 12 (Karl)
+      </button>
+      <button onClick={() => handleSwitchUser(18)}>
+        Utilisateur 18 (Cecilia)
+      </button>
     </div>
   );
 }
