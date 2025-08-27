@@ -1,12 +1,58 @@
-# React + Vite
+# SportSee
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SportSee est une startup dédiée au coaching sportif.
+En pleine croissance, l’entreprise lance une nouvelle version de la page profil de l’utilisateur.
+Cette page permet à l’utilisateur de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées.
 
-Currently, two official plugins are available:
+## Sommaire
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. [Installation](#installation)
+2. [Fonctionnalités](#fonctionnalites)
+3. [Design](#design)
+4. [Technologies](#technologies)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Pour installer le projet, clonez le dépôt GitHub
+
+Installez les dépendances :
+
+```bash
+pnpm install
+```
+
+Lancez le projet en mode développement :
+
+```bash
+pnpm dev
+```
+
+Pour installer le back, clonez ce dépôt Github : [link](https://github.com/OpenClassrooms-Student-Center/SportSee)
+
+## Fonctionnalités
+
+- **Routing dynamique** : accès au profil d’un utilisateur via son ID (`/user/:id`).
+- **Statistiques utilisateur** : affichage des données principales (score, calories, protéines, glucides, lipides, etc.).
+- **Visualisation graphique** :
+  - Activité quotidienne (poids + calories brûlées).
+  - Durée moyenne des sessions.
+  - Performance par type d’exercice.
+  - Score global de progression.
+- **Mock de données** : possibilité de tester l’application sans API.
+- **Intégration API** : récupération et normalisation des données depuis le backend.
+
+## Design
+
+Le design a été réalisé sous Figma. Toutes les ressources (logos, icônes, etc.) sont disponibles dans la maquette.
+
+- [Lien vers la maquette Figma](https://www.figma.com/design/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0-1&p=f&t=lRmHZmhp3cJ6ua4e-0)
+
+## Technologies
+
+- **React**
+- **Vite**
+- **React Router**
+- **SCSS**
+- **JavaScript**
+- **Recharts**
+- **Axios**
