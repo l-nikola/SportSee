@@ -7,6 +7,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 const CustomChartLegend = () => {
   return (
@@ -97,3 +98,12 @@ function DailyChart({ data }) {
 }
 
 export default DailyChart;
+
+DailyChart.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};

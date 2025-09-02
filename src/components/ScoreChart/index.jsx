@@ -1,4 +1,5 @@
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
+import PropTypes from "prop-types";
 
 export default function ScoreChart({ score }) {
   const data = [
@@ -38,3 +39,7 @@ export default function ScoreChart({ score }) {
     </section>
   );
 }
+
+ScoreChart.propTypes = {
+  score: PropTypes.number.isRequired,
+};

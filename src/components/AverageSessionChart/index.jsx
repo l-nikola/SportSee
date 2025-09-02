@@ -6,6 +6,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 const CustomChartTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -71,3 +72,7 @@ export default function AverageSessionChart({ data }) {
     </section>
   );
 }
+
+AverageSessionChart.propTypes = {
+  data: PropTypes.array.isRequired,
+};

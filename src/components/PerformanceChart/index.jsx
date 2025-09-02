@@ -5,6 +5,7 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
 
 export default function PerformanceChart({ data }) {
   const translations = {
@@ -45,3 +46,10 @@ export default function PerformanceChart({ data }) {
     </section>
   );
 }
+
+PerformanceChart.propTypes = {
+  data: PropTypes.shape({
+    data: PropTypes.array.isRequired,
+    kind: PropTypes.object.isRequired,
+  }).isRequired,
+};

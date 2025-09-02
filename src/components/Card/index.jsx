@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function Card({ keyData, unit, name, icon }) {
   return (
     <section className="card">
@@ -16,3 +18,10 @@ export default function Card({ keyData, unit, name, icon }) {
     </section>
   );
 }
+
+Card.propTypes = {
+  keyData: PropTypes.number.isRequired,
+  unit: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+};

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function SidebarButton({ icon }) {
   return (
     <button className="sidebarButton">
@@ -5,3 +7,7 @@ export default function SidebarButton({ icon }) {
     </button>
   );
 }
+
+SidebarButton.propTypes = {
+  icon: PropTypes.string.isRequired,
+};

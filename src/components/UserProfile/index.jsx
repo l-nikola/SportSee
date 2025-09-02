@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function UserProfile({ user }) {
   return (
     <section className="userProfile">
@@ -9,3 +11,11 @@ export default function UserProfile({ user }) {
     </section>
   );
 }
+
+UserProfile.propTypes = {
+  user: PropTypes.shape({
+    userInfos: PropTypes.shape({
+      firstName: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
