@@ -12,6 +12,7 @@ import PerformanceChart from "../../components/PerformanceChart";
 import AverageSessionChart from "../../components/AverageSessionChart";
 import ScoreChart from "../../components/ScoreChart";
 import Card from "../../components/Card";
+import Error from "../Error";
 
 export default function Profile() {
   const { id } = useParams();
@@ -20,6 +21,7 @@ export default function Profile() {
   const [activity, setActivity] = useState();
   const [performance, setPerformance] = useState();
   const [averageSession, setAverageSession] = useState();
+  const [userNotFound, setUserNotFound] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -31,6 +33,12 @@ export default function Profile() {
             getUserPerformance(id),
             getUserAverageSessions(id),
           ]);
+
+        if (!userData) {
+          setUserNotFound(true);
+          return;
+        }
+
         setUser(userData);
 
         const transformed = activityData.sessions.map((session, index) => ({
@@ -46,10 +54,15 @@ export default function Profile() {
         setAverageSession(averageSession.sessions);
       } catch (error) {
         console.error(error);
+        setUserNotFound(true);
       }
     }
     fetchData();
   }, [id]);
+
+  if (userNotFound) {
+    return <Error />;
+  }
 
   if (!user || !activity || !performance || !averageSession) {
     return <p>Chargement des données...</p>;
