@@ -11,6 +11,7 @@ import DailyChart from "../../components/DailyChart";
 import PerformanceChart from "../../components/PerformanceChart";
 import AverageSessionChart from "../../components/AverageSessionChart";
 import ScoreChart from "../../components/ScoreChart";
+import ApiAlert from "../../components/ApiAlert";
 import Card from "../../components/Card";
 import Error from "../Error";
 
@@ -22,6 +23,7 @@ export default function Profile() {
   const [performance, setPerformance] = useState();
   const [averageSession, setAverageSession] = useState();
   const [userNotFound, setUserNotFound] = useState(false);
+  const [apiUnavailable, setApiUnavailable] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -53,12 +55,29 @@ export default function Profile() {
 
         setAverageSession(averageSession.sessions);
       } catch (error) {
-        console.error(error);
-        setUserNotFound(true);
+        console.error("Error retrieving data :", error);
+        if (
+          import.meta.env.VITE_USE_MOCK === "false" &&
+          !localStorage.getItem("VITE_USE_MOCK")
+        ) {
+          setApiUnavailable(true);
+        } else {
+          setUserNotFound(true);
+        }
       }
     }
     fetchData();
   }, [id]);
+
+  // Switch to mock
+  const handleSwitchMock = () => {
+    localStorage.setItem("VITE_USE_MOCK", "true");
+    window.location.reload();
+  };
+
+  if (apiUnavailable) {
+    return <ApiAlert onSwitchMock={handleSwitchMock} />;
+  }
 
   if (userNotFound) {
     return <Error />;

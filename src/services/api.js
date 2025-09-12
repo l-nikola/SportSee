@@ -7,7 +7,11 @@ import {
 } from "./mockData";
 
 // Get the environment variable
-const useMock = import.meta.env.VITE_USE_MOCK === "true";
+const localMock = localStorage.getItem("VITE_USE_MOCK");
+const useMock =
+  localMock !== null
+    ? localMock === "true"
+    : import.meta.env.VITE_USE_MOCK === "true";
 const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 const apiClient = axios.create({
